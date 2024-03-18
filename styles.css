@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Lobster';
+  src: url('Fonts/Lobster-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  background-image: linear-gradient(to bottom, #615dad, #ffc8da) ;
+  height: 100%;
+  font-family: 'Lobster', sans-serif;
+}
+
+.main-section {
+
+}
