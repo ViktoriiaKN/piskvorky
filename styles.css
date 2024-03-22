@@ -32,7 +32,7 @@ width: 400px;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: 50px;
+margin: 40px;
 border: 2px solid transparent;
 border-radius: 10px;
 overflow: hidden;
@@ -82,26 +82,26 @@ overflow: hidden;
   padding: 0;
 }
 
-.first-li, .second-li {
+.first-link, .second-link {
   height: 50px;
   line-height: 50px;
   border: none;
   font-family: sans-serif;
 }
 
-.first-li {
+.first-link {
   background-color: #1fcca4;
 }
 
-.first-li:hover {
+.first-link:hover {
   background-color: #1cbb96;
 }
 
-.second-li {
+.second-link {
   background-color: #0197f6;
 text-align: center;
 }
 
-.second-li:hover {
+.second-link:hover {
   background-color: #0090e9;
 }
