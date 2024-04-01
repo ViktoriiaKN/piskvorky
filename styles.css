@@ -38,6 +38,12 @@ border-radius: 10px;
 overflow: hidden;
 }
 
+.game-container {
+max-width: 80vmin;
+display: grid;
+grid-template-rows: auto 1fr; /* Перший рядок буде автоматичної висоти, другий рядок буде займати залишок простору */
+}
+
 .picture {
   width: 100%;
 }
@@ -57,6 +63,7 @@ overflow: hidden;
   font-weight: 400;
   margin-top: 15px;
   margin-bottom: 30px;
+  justify-self: center;
 }
 
 .description {
@@ -105,3 +112,89 @@ text-align: center;
 .second-link:hover {
   background-color: #0090e9;
 }
+
+/* GAME */
+.player {
+  color: #ffff;
+  font-family: sans-serif;
+}
+
+.player-image:focus{
+  border: 1px solid blueviolet;
+}
+
+.nav-bar{
+  width: 100%;
+  display: flex;
+ justify-content: space-between;
+ text-align: center;
+ margin: 0;
+}
+
+.gamer {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+.navigation, .gamer {
+  align-self: center;
+}
+
+.home {
+  display: flex; /* Встановлюємо flex для внутрішнього контейнера */
+  justify-content: center; /* Вирівнюємо по горизонталі по центру */
+  align-items: center; /* Вирівнюємо по вертикалі по центру */
+  width: 40px;
+  height: 40px;
+  background-color: #50c699;
+  border-radius: 4px;
+}
+
+.home:hover,
+.home:focus {
+  background-color: #27a978;
+}
+
+.restart {
+  display: flex; /* Встановлюємо flex для внутрішнього контейнера */
+  justify-content: center; /* Вирівнюємо по горизонталі по центру */
+  align-items: center; /* Вирівнюємо по вертикалі по центру */
+  width: 40px;
+  height: 40px;
+  background-color: #006edb;
+  border-radius: 4px;
+}
+
+.restart:hover,
+.restart:focus {
+ background-color: #0969DA;
+}
+
+/* Стилізуємо кнопки */
+.game-play {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 однакових стовпців */
+  grid-template-rows: repeat(10, 1fr); /* 10 однакових рядків */
+  background-image: linear-gradient(to bottom, #615dad, #ffc8da) ;
+}
+
+.button {
+  border: 1px solid #000; /* бордер кнопок */
+  background-color: transparent; /* Прозорий фон для кнопок */
+  width: 100%; /* ширина кнопок на весь контейнер */
+  height: 100%; /* висота кнопок на весь контейнер */
+  aspect-ratio: 1 / 1;
+}
+
+/* Задаємо колір кнопок при наведенні миші */
+.button:hover,
+.button:focus {
+  background-color: #666;
+}
+
