@@ -42,6 +42,9 @@ overflow: hidden;
 max-width: 80vmin;
 display: grid;
 grid-template-rows: auto 1fr; /* Перший рядок буде автоматичної висоти, другий рядок буде займати залишок простору */
+width: 400px;
+align-items: center;
+margin: 40px;
 }
 
 .picture {
@@ -119,8 +122,9 @@ text-align: center;
   font-family: sans-serif;
 }
 
+.player-image:hover,
 .player-image:focus{
-  border: 1px solid blueviolet;
+  cursor: pointer;
 }
 
 .nav-bar{
@@ -133,7 +137,7 @@ text-align: center;
 
 .gamer {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
 }
 
@@ -159,6 +163,7 @@ text-align: center;
 .home:hover,
 .home:focus {
   background-color: #27a978;
+  cursor: pointer;
 }
 
 .restart {
@@ -173,7 +178,8 @@ text-align: center;
 
 .restart:hover,
 .restart:focus {
- background-color: #0969DA;
+ background-color: #2a6ab2;
+ cursor: pointer;
 }
 
 /* Стилізуємо кнопки */
@@ -190,11 +196,13 @@ text-align: center;
   width: 100%; /* ширина кнопок на весь контейнер */
   height: 100%; /* висота кнопок на весь контейнер */
   aspect-ratio: 1 / 1;
+  transition: background-color 0.3s; /* Додано плавний перехід для плавного змінення кольору */
 }
 
 /* Задаємо колір кнопок при наведенні миші */
 .button:hover,
 .button:focus {
-  background-color: #666;
+  background-color: rgba(219, 205, 212, 0.4); /* Змінено на кольорове значення з прозорістю */
+  cursor: pointer;
 }
 
