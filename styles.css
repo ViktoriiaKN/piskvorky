@@ -39,10 +39,9 @@ overflow: hidden;
 }
 
 .game-container {
-max-width: 80vmin;
 display: grid;
 grid-template-rows: auto 1fr; /* Перший рядок буде автоматичної висоти, другий рядок буде займати залишок простору */
-width: 400px;
+width: 50vw;
 align-items: center;
 margin: 40px;
 }
@@ -187,7 +186,6 @@ text-align: center;
   display: grid;
   grid-template-columns: repeat(10, 1fr); /* 10 однакових стовпців */
   grid-template-rows: repeat(10, 1fr); /* 10 однакових рядків */
-  background-image: linear-gradient(to bottom, #615dad, #ffc8da) ;
 }
 
 .button {
@@ -202,7 +200,7 @@ text-align: center;
 /* Задаємо колір кнопок при наведенні миші */
 .button:hover,
 .button:focus {
-  background-color: rgba(219, 205, 212, 0.4); /* Змінено на кольорове значення з прозорістю */
+  background-color: rgba(219, 205, 212, 0.9); /* Змінено на кольорове значення з прозорістю */
   cursor: pointer;
 }
 
