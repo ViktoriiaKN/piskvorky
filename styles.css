@@ -143,9 +143,6 @@ text-align: center;
 .navigation {
   display: flex;
   gap: 10px;
-}
-
-.navigation, .gamer {
   align-self: center;
 }
 
