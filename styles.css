@@ -41,9 +41,6 @@ overflow: hidden;
 }
 
 .game-container {
-/* display: grid;
-grid-template-rows: auto 1fr; /* Перший рядок буде автоматичної висоти, другий рядок буде займати залишок простору */
-/* width: 50vw;  */
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -158,7 +155,6 @@ text-align: center;
   align-items: center;
   width: 40px;
   height: 40px;
-  /* background-color: #50c699; */
   border-radius: 4px;
 }
 
@@ -166,29 +162,17 @@ text-align: center;
 .home:focus, 
 .restart:hover,
 .restart:focus {
-  /* background-color: #27a978; */
   cursor: pointer;
 }
 
 .home {
-  background-color: #50c699; /* + */
+  background-color: #50c699; 
 }
 
 .home:hover, 
 .home:focus {
-  background-color: #27a978; /* + */ 
+  background-color: #27a978; 
 }
-
-/* .restart {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  width: 40px;
-  height: 40px;
-  background-color: #006edb;
-  border-radius: 4px;
-}
- */
 
 .restart {
   background-color: #006edb;
@@ -201,13 +185,10 @@ text-align: center;
 
 /* Стилізуємо кнопки */
 .game-play {
-  /* display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr); */
   display: flex;
   flex-wrap: wrap;
   max-width: 80vmin;
-  width: 80vmin;/* calc(40px * 10); */
+  width: 80vmin;
   gap: 0;
   justify-content: center;
 }
@@ -227,3 +208,55 @@ text-align: center;
   cursor: pointer;
 }
 
+/* Styles for circle and cross */
+
+.game-play--circle {
+  position: relative;
+}
+
+.game-play--circle::before,
+.game-play--circle::after {
+  content: ""; 
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 60%; 
+  height: 60%;
+  background-color: transparent;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.game-play--cross {
+  position: relative;
+}
+
+.game-play--cross::before,
+.game-play--cross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 5px;
+  background-color: black;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.game-play--cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.button-clicked {
+  pointer-events: none; /* Disables further clicks on the button Забороняє подальші кліки на кнопці */
+}
+
+@keyframes appearShape {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
