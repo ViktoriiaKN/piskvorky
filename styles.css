@@ -7,6 +7,10 @@
   font-style: normal;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 body, html {
   background-image: linear-gradient(to bottom, #615dad, #ffc8da) ;
   min-height: 100%;

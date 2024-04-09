@@ -7,14 +7,15 @@ function handleButtonClick(event) {
   const btn = event.target;
   if (!btn.classList.contains('button-clicked')) {
     if (currentPlayer === 'circle') {
-      btn.classList.add('game-play--circle', 'animate__animated', 'animate__zoomIn', 'animate__faster');
+      btn.classList.add('game-play--circle');
       currentPlayer = 'cross';
     } else {
-      btn.classList.add('game-play--cross', 'animate__animated', 'animate__zoomIn', 'animate__faster');
+      btn.classList.add('game-play--cross');
       currentPlayer = 'circle';
     }
     btn.classList.add('button-clicked');
     updatePlayerTurnDisplay();
+    this.blur();
   }
 }
 
