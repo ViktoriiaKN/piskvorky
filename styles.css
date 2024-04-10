@@ -120,6 +120,7 @@ text-align: center;
   background-color: #0090e9;
 }
 
+
 /* GAME */
 .player {
   color: #ffff;
@@ -212,6 +213,10 @@ text-align: center;
   cursor: pointer;
 }
 
+.button-clicked {
+  pointer-events: none; /* Disables further clicks on the button Забороняє подальші кліки на кнопці */
+} 
+
 /* Styles for circle and cross */
 
 .game-play--circle {
@@ -230,6 +235,7 @@ text-align: center;
   background-color: transparent;
   border: 5px solid black;
   border-radius: 50%;
+  animation: zoomIn 0.5s ease;
 }
 
 .game-play--cross {
@@ -246,21 +252,40 @@ text-align: center;
   height: 5px;
   background-color: black;
   transform: translate(-50%, -50%) rotate(45deg);
+  animation: zoomIn 0.5s ease;
 }
 
 .game-play--cross::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.button-clicked {
-  pointer-events: none; /* Disables further clicks on the button Забороняє подальші кліки на кнопці */
+/*  Alternative way with svg */
+
+/* .game-play--circle {
+  background-image: url(./svg/circle-black.svg);
+  animation: zoomIn 0.5s ease;
+  background-repeat: no-repeat;
+  background-size: 70%;
+background-position: center center;
 }
 
-@keyframes appearShape {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+.game-play--cross {
+  background-image: url(./svg/cross-black.svg);
+  animation: zoomIn 0.5s ease;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center center;
+
 }
+ */
+
+/* @keyframes zoomIn {
+  from {
+    transform: scale(0.1);
+
+  }
+
+  to {
+    transform: scale(1)
+  }
+}  */

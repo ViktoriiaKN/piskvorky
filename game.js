@@ -13,7 +13,7 @@ function handleButtonClick(event) {
       btn.classList.add('game-play--cross');
       currentPlayer = 'circle';
     }
-    btn.classList.add('button-clicked');
+    btn.classList.add('button-clicked');{""}
     updatePlayerTurnDisplay();
     this.blur();
   }
