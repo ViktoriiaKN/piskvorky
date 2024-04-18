@@ -34,7 +34,7 @@ a {
 }
 
 .container {
-max-width: 80vmin /* 55vmin */;
+max-width: 80vmin;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -289,3 +289,22 @@ background-position: center center;
     transform: scale(1)
   }
 }  */
+
+.winner-declared {
+  cursor: default;
+  background-image: linear-gradient(to bottom, #615dad, #ffc8da), 
+                    radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 70%);
+  background-blend-mode: multiply, normal;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
