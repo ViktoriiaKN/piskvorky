@@ -35,10 +35,11 @@ a {
 
 .container {
 max-width: 80vmin;
+width: 500px;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 40px;
+margin: auto auto;
 border: 2px solid transparent;
 border-radius: 10px;
 overflow: hidden;
@@ -48,7 +49,7 @@ overflow: hidden;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 40px;
+margin: auto auto;
 }
 
 .picture {
