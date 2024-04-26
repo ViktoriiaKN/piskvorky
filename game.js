@@ -4,7 +4,6 @@ let currentPlayer = 'circle';
 let gameField = Array(100).fill('_');
 
 const gamePlay = document.querySelector('.game-play');
-const playerTurnDisplay = document.querySelector('.player');
 
 function handleButtonClick(event) {
   const btn = event.target;
@@ -14,6 +13,7 @@ function handleButtonClick(event) {
       btn.classList.add('game-play--circle');
       gameField[cellIndex] = 'o';
       currentPlayer = 'cross';
+      checkAndPlayAI(); // Checking and playing AI after each user's move Перевірка та гра AI після кожного ходу користувача
     } else {
       btn.classList.add('game-play--cross');
       gameField[cellIndex] = 'x';
@@ -41,6 +41,30 @@ function handleButtonClick(event) {
     this.blur();
   }
 }
+
+async function checkAndPlayAI() {
+  if (currentPlayer === 'cross') {
+    const response = await fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: gameField, // Sending the current state of the field Передача поточного стану поля
+          player: 'x', // Looking for a move for the cross Шукаємо хід для хрестика
+        }),
+      }
+    );
+    const data = await response.json();
+    const {position: {x, y}} = data;
+    const index = x + y * 10;
+    const button = document.querySelectorAll('.button')[index];
+    button.click(); // Simulate a click on the corresponding field button Симуляція кліку на відповідному кнопці поля
+  }
+}
+
 
 function updatePlayerTurnDisplay() {
   const playerImage = document.querySelector('.player-image');
